@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("db_study.repository.mybatis")
+@MapperScan("db_study.repository.mapper")
 public class DbStudyApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,5 @@
+mybatis:
+  type-aliases-package: db_study.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml  # ? ??? ??

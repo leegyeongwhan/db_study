@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: db_study
+
+mybatis:
+  type-aliases-package: db_study_domain
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    db_study:
+      repository:
+        mybatis: trace
+
+  spring:
+    datasource:
+      url: jdbc:h2:mem:testdb  # Your H2 database URL
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: password
+      initialization-mode: always  # Ensure the database initializes
+      schema: classpath:schema.sql  # Path to your SQL schema file
+    # H2 ?? ???
+  sql:
+    init:
+      mode: always  # ?????? ??? ??
