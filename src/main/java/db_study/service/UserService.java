@@ -1,5 +1,6 @@
 package db_study.service;
 
+import db_study.UserRole;
 import db_study.controller.UserSaveRequest;
 import db_study.entity.UserEntity;
 import db_study.repository.mapper.UserMapper;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserMapper userMapper;
+
 
     public UserEntity save(UserSaveRequest request) {
         UserEntity user = UserEntity.builder()
@@ -33,7 +35,11 @@ public class UserService {
 
     }
 
-    public UserEntity read(Long id){
+    public UserEntity read(Long id) {
         return userMapper.findById(id).get();
+    }
+
+    public UserEntity readUserByRole(Long id, UserRole userRole) {
+        return userMapper.findByRole(id, userRole);
     }
 }
