@@ -11,6 +11,7 @@ public class UserEntity {
     private String name;
     private Long stock;
     private UserRole userRole;
+    private String contact;
 
     @Builder
     public UserEntity(Long id, String name, Long stock, UserRole userRole) {

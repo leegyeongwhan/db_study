@@ -2,4 +2,21 @@ mybatis:
   type-aliases-package: db_study.entity
   configuration:
     map-underscore-to-camel-case: true
-  mapper-locations: classpath:mapper/*.xml  # ? ??? ??
+  mapper-locations: classpath:mapper/*.xm
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/flyway-study
+    username: root
+    password: root
+  flyway:
+      enabled: true
+      baseline-on-migrate: true # Flyway가 제공하는 변경 이력 테이블 자동 생성
+      baseline-version: 0 #
+      locations: classpath:/db
+
+logging:
+  level:
+    org.flywaydb: DEBUG
+
